@@ -6,10 +6,10 @@ load_dotenv()
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 
 DB_CONFIG = {
-    'host': 'localhost',         # Для MAMP используйте 'localhost'
-    'user': 'root',              # По умолчанию пользователь в MAMP — root
-    'password': 'root',          # Пароль root в MAMP
-    'database': 'taxi_bot_db'    # Имя базы данных
+    'host': 'localhost',
+    'user': 'root',
+    'password': 'root',
+    'database': 'taxi_bot_db'
 }
 
 TRIP_TYPES = {
@@ -18,3 +18,6 @@ TRIP_TYPES = {
 }
 
 MAX_SEATS = 4
+
+# Список админов (ID Telegram)
+ADMIN_IDS = [7117000356]
