@@ -71,7 +71,7 @@ def reset_loyalty_points(user_id):
     execute_query(query, (user_id,))
 
 
-# Админ-функции
+# Пользователи
 def ban_user(user_id):
     """Заблокировать пользователя"""
     query = "UPDATE users SET banned = 1 WHERE user_id = %s"

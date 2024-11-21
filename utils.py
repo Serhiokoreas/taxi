@@ -1,4 +1,5 @@
 from config import ADMIN_IDS
+from database import execute_query
 
 def is_admin(user_id):
     """Проверить, является ли пользователь админом"""

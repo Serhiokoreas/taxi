@@ -3,15 +3,9 @@ from datetime import datetime, timedelta
 
 scheduler = BackgroundScheduler()
 
-def schedule_trip_reminder(context, user_id, trip_info, trip_id):
+def schedule_trip_reminder(context, user_id, trip_info, trip_date):
     """Планирование напоминания о поездке"""
-    # Допустим, в базе данных у нас хранится дата поездки в формате YYYY-MM-DD
-    query = "SELECT date FROM trips WHERE id = %s"
-    trip_date = execute_query(query, (trip_id,), fetchone=True)
-    if not trip_date:
-        return
-
-    job_time = datetime.strptime(trip_date[0], '%Y-%m-%d') - timedelta(hours=1)
+    job_time = datetime.strptime(trip_date, '%Y-%m-%d') - timedelta(hours=1)
 
     scheduler.add_job(
         send_reminder,
